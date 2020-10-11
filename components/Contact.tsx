@@ -1,11 +1,14 @@
 import React from 'react';
 
+import classes from '../config/classes';
+import H2 from './H2';
+
 const Contact = () => {
   return (
-    <section className="text-gray-700 body-font relative">
+    <section className={`${classes.wrapper} text-gray-700 body-font relative`}>
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+          <H2>Contact Us</H2>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.
           </p>
