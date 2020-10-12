@@ -13,7 +13,7 @@ const Hero = () => {
           src="https://dummyimage.com/720x600"
         />
         <div className="text-center lg:w-2/3 w-full">
-          <H1>Microdosing synth tattooed vexillologist</H1>
+          <H1>{process.env.NEXT_PUBLIC_HERO_TITLE}</H1>
           <p className="mb-8 leading-relaxed">
             Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust
             fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over
