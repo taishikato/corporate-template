@@ -6,9 +6,14 @@
     "tailwind:css": "tailwind build styles/tailwind.src.css -c tailwind.config.js -o styles/tailwind.css",
     "dev": "npm run tailwind:css && next dev",
     "build": "npm run tailwind:css && next build",
-    "start": "npm run tailwind:css && next start"
+    "start": "npm run tailwind:css && next start",
+    "export": "next export"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "next": "9.5.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
