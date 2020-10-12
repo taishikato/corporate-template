@@ -3,13 +3,14 @@ import Hero from '../components/Hero';
 import WhoWeAre from '../components/WhoWeAre';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import db from '../firebase/clientApp';
 
-export default function Home() {
+export default function Home({ site }) {
   return (
     <div>
-      <Nav />
+      <Nav name={site.name} />
       <main>
-        <Hero />
+        <Hero title={site.heroTitle} subtitle={site.heroSubtitle} />
         <WhoWeAre />
         <Contact />
       </main>
@@ -17,4 +18,25 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const doc = await db
+    .collection('users')
+    .doc(process.env.NEXT_PUBLIC_USER_ID)
+    .collection('sites')
+    .doc(process.env.NEXT_PUBLIC_SITE_ID)
+    .get();
+  const data = doc.data();
+  const site = {
+    name: data.name,
+    heroTitle: data.heroTitle,
+    heroSubtitle: data.heroSubtitle,
+  };
+
+  return {
+    props: {
+      site,
+    },
+  };
 }
