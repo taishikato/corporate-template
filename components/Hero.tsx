@@ -3,7 +3,7 @@ import React from 'react';
 import classes from '../config/classes';
 import H1 from './H1';
 
-const Hero = () => {
+const Hero = ({ title, subtitle }) => {
   return (
     <section className={`${classes.wrapper} text-gray-700 body-font`}>
       <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
@@ -13,8 +13,8 @@ const Hero = () => {
           src="https://dummyimage.com/720x600"
         />
         <div className="text-center lg:w-2/3 w-full">
-          <H1>{process.env.NEXT_PUBLIC_HERO_TITLE}</H1>
-          <p className="mb-8 leading-relaxed">{process.env.NEXT_PUBLIC_HERO_SUBTITLE}</p>
+          <H1>{title}</H1>
+          <p className="mb-8 leading-relaxed">{subtitle}</p>
         </div>
       </div>
     </section>
