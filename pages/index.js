@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import WhoWeAre from '../components/WhoWeAre';
@@ -7,16 +9,22 @@ import db from '../firebase/clientApp';
 
 export default function Home({ site }) {
   return (
-    <div>
-      <Nav name={site.name} />
-      <main>
-        <Hero title={site.heroTitle} subtitle={site.heroSubtitle} />
-        <WhoWeAre />
-        <Contact />
-      </main>
+    <>
+      <Head>
+        <title>{site.name}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>
+        <Nav name={site.name} />
+        <main>
+          <Hero title={site.heroTitle} subtitle={site.heroSubtitle} />
+          <WhoWeAre />
+          <Contact />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 
